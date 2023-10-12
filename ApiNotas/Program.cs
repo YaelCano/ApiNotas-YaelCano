@@ -11,11 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ApiNotasContext>(options =>
-{
-    string connectionString = builder.Configuration.GetConnectionString("Mysqlconex");
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-});
+
 
 var app = builder.Build();
 
