@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core.Entities;
 
-namespace Core.Interfaces
-{
+namespace Core.Interfaces;
+
     public interface IAuditoria : IGenericRepository<Auditoria>
     {
         
@@ -14,4 +14,3 @@ namespace Core.Interfaces
     public interface IGenericRepository<T>
     {
     }
-}
