@@ -79,11 +79,11 @@ namespace API.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult> Delete(int id){
-            var item = await _UnitOfWork.Auditoria.GetByIdAsync(id);
-            if (item == null){
+            var auditoria = await _UnitOfWork.Auditoria.GetByIdAsync(id);
+            if (auditoria == null){
                 return NotFound();
             }
-            _UnitOfWork.Auditoria.Remove(item);
+            _UnitOfWork.Auditoria.Remove(auditoria);
             await _UnitOfWork.SaveAsync();
             return NoContent();
         }

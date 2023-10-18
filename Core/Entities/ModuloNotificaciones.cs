@@ -19,7 +19,7 @@ namespace Core.Entities;
         public int IdHiloRespuestaFk { get; set; }
         public Formatos Formatos { get; set; }
         public int IdFormatoFk { get; set; }
-        public tipoRequerimiento TpRequerimiento { get; set; }
+        public TipoRequerimiento TpRequerimiento { get; set; }
         public int IdRequerimiento { get; set; }
 
     }
