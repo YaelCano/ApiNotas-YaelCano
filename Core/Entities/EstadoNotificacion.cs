@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Core.Entities;
 
-    public class EstadoNotificacion : BaseEntity
-    {
-        [Required]
-        public string NombreEstado { get; set; }
-    }
+public class EstadoNotificacion : BaseEntity
+{
+    [Required]
+    public string NombreEstado { get; set; }
+    public ICollection<ModuloNotificaciones> ModuloNoficaciones { get; set; }
+
+}

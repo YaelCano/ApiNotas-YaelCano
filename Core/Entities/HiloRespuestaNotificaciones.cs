@@ -10,4 +10,6 @@ namespace Core.Entities;
     {
         [Required]
         public string Nombretipo { get; set; }
+        public ICollection<BlockChain> BlockChains {get; set;}
+        public ICollection<ModuloNotificaciones> ModuloNoficaciones {get; set;}
     }

@@ -8,4 +8,8 @@ namespace Core.Entities;
     public class ModulosMaestros : BaseEntity
     {
         public string NombreModulo { get; set; }
+        public ICollection<RolvsMaestro> RolvsMaestros {get; set;}
+        public ICollection<MaestrosvsSubmodulos> MaestrosvsSubModulos {get; set;}
     }
+
+    

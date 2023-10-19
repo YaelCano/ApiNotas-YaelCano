@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Core.Entities;
 
-    public class BlockChain : BaseEntity
-    {
-        [Required]
-        public string HashGenerado { get; set; }
-        public Auditoria Auditorias { get; set; }
-        public int IdAuditoriaFk { get; set; }
-        public HiloRespuestaNotificaciones HiloRespuestaNot { get; set; }
-        public int IdHiloRespuestaFk { get; set; }
-        public TipoNotificaciones TipoNots { get; set; }
-        public int IdNotificacionFk { get; set; }
-    }
+public class BlockChain : BaseEntity
+{
+    [Required]
+    public string HashGenerado { get; set; }
+    public Auditoria Auditorias { get; set; }
+    public int IdAuditoriaFk { get; set; }
+    public HiloRespuestaNotificaciones HiloRespuestaNot { get; set; }
+    public int IdHiloRespuestaFk { get; set; }
+    public TipoNotificaciones TipoNots { get; set; }
+    public int IdNotificacionFk { get; set; }
+
+}

@@ -9,28 +9,34 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace Infraestructure.Data.configuration
 {
     public class BlockChainConfiguration : IEntityTypeConfiguration<BlockChain>
-{
-    public void Configure(EntityTypeBuilder<BlockChain> builder)
     {
-        builder.ToTable("Blockchain");
-        builder.HasKey(x => x.Id);
-        builder.Property(x => x.Id).HasColumnName("Id");
+        public void Configure(EntityTypeBuilder<BlockChain> builder)
+        {
+            builder.ToTable("BlockChain");
 
-        builder.Property(x => x.IdAuditoriaFk).IsRequired();
-        builder.Property(x => x.HashGenerado).HasMaxLength(100);
-        builder.Property(x => x.FechaCreacion);
-        builder.Property(x => x.FechaModificacion);
+            builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id);
 
-        builder.HasOne(A => A.Auditorias)
-        .WithMany(A => A.BlockChains)
-        .HasForeignKey(A => A.IdAuditoria);
+            builder.Property(e => e.HashGenerado)
+            .IsRequired()
+            .HasMaxLength(100);
 
-        builder.HasOne(T => T.TipoNotificaciones)
-        .HasForeignKey(T => T.IdTipoNotificaciones);
+            builder.Property(w => w.FechaCreacion)
+            .HasColumnType("DateTime");
+            builder.Property(w => w.FechaModificacion)
+            .HasColumnType("DateTime");
 
-        builder.HasOne(H => H.HiloRespuestaNot)
-        .WithMany(H => H.BlockChains)
-        .HasForeignKey(H => H.IdHiloRespuesta);
+            builder.HasOne(p => p.Auditorias)
+            .WithMany(p => p.BlockChains)
+            .HasForeignKey(e => e.IdAuditoriaFk);
+
+            builder.HasOne(p => p.HiloRespuestaNot)
+            .WithMany(p => p.BlockChains)
+            .HasForeignKey(p => p.IdHiloRespuestaFk);
+
+            builder.HasOne(p => p.TipoNots)
+            .WithMany(p => p.BlockChains)
+            .HasForeignKey(P => P.IdNotificacionFk);
+        }
     }
-}
 }

@@ -7,5 +7,7 @@ namespace Core.Entities;
 
     public class PermisosGenericos : BaseEntity
     {
-        public string NombrePermiso { get; set; }   
+        public string NombrePermiso { get; set; }
+        public ICollection<GenericosvsSubmodulos> GenericosvsSubModulos {get; set;}
+
     }

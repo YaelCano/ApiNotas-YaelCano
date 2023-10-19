@@ -9,4 +9,6 @@ namespace Core.Entities;
     {
         [Required]
         public string NombtreFormatos { get; set; }
+        public ICollection<ModuloNotificaciones> ModuloNoficaciones {get; set;}
+
     }

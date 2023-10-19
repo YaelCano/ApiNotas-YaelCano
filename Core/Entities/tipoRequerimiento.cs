@@ -8,4 +8,6 @@ namespace Core.Entities;
     public class TipoRequerimiento : BaseEntity
     {
         public string Nombre { get; set; }
+        public ICollection<ModuloNotificaciones> ModuloNoficaciones {get; set;}
+
     }

@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace Core.Entities;
 
-    public class TipoNotificaciones : BaseEntity
-    {
-        public string NombreTipo { get; set; }
-    }
+public class TipoNotificaciones : BaseEntity
+{
+    public string NombreTipo { get; set; }
+    public ICollection<BlockChain> BlockChains {get; set;}
+    public ICollection<ModuloNotificaciones> ModuloNoficaciones {get; set;}
+}

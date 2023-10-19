@@ -6,19 +6,17 @@ using Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Infraestructure.Data.configuration;
-
-    public class SubModuloConfiguration : IEntityTypeConfiguration<SubModulos>
+namespace Infraestructure.Data.configuration
 {
-    
-    public void Configure(EntityTypeBuilder<SubModulos> builder)
+    public class RolConfiguration : IEntityTypeConfiguration<Rol>
     {
-        builder.ToTable("submodulos");
+            public void Configure(EntityTypeBuilder<Rol> builder)
+    {
+        builder.ToTable("rol");
         builder.HasKey(x => x.Id);
-        builder.Property(x => x.NombreSubmodulo);
+        builder.Property(x => x.Nombre).IsRequired().HasMaxLength(100);
         builder.Property(x => x.FechaCreacion);
         builder.Property(x => x.FechaModificacion);
-
-        builder.Property(x => x.Id).HasColumnName("id");
+    }
     }
 }
