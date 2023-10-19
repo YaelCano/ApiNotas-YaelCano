@@ -10,7 +10,7 @@ namespace Core.Interfaces
         IAuditoria Auditoria{ get; }
         IBlockChain BlockChain{ get; }
         IEstadoNotificacion EstadoNotificacion { get; }
-        IFormato Formato{ get; }
+        IFormato Formatos{ get; }
         IGenericosvsSubModulos GenericosvsSubModulos{ get; }
         IHiloRespuestaNot HiloRespuestaNot{ get; }
         IMaestrovsSubModulos MaestrovsSubModulos{ get; }
