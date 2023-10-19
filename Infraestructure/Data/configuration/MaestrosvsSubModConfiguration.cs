@@ -19,13 +19,13 @@ namespace Infraestructure.Data.configuration
         builder.Property(x => x.FechaCreacion);
         builder.Property(x => x.FechaModificacion);
 
-        builder.HasOne(M => M.ModulosMaestros)
-        .WithMany(M => M.MaestrosVsSubmodulos)
+        builder.HasOne(M => M.Maestros)
+        .WithMany(M => M.MaestrosvsSubModulos)
         .HasForeignKey(M => M.IdMaestro);
 
-        builder.HasOne(M => M.SubModulos)
-        .WithMany(S => S.MaestrosVsSubmodulos)
-        .HasForeignKey(M => M.IdSubmodulo);
+        builder.HasOne(M => M.subModulos)
+        .WithMany(S => S.MaestrosvsSubModulos)
+        .HasForeignKey(M => M.IdSubModulo);
     }
     }
 }

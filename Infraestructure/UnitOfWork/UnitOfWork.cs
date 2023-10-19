@@ -225,6 +225,8 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
     public ITipoNotificaciones TipoNotificaciones => throw new NotImplementedException();
 
+    public IFormato Formatos => throw new NotImplementedException();
+
     public Task<int> SaveAsync()
     {
         return _context.SaveChangesAsync();

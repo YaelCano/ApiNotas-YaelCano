@@ -34,92 +34,92 @@ namespace Infraestructure.Data.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "EstadoNotificacions",
+                name: "estadonotificacion",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    NombreEstado = table.Column<string>(type: "longtext", nullable: false)
+                    NombreEstado = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     FechaCreacion = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     FechaModificacion = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EstadoNotificacions", x => x.Id);
+                    table.PrimaryKey("PK_estadonotificacion", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Formatos",
+                name: "formatos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    NombtreFormatos = table.Column<string>(type: "longtext", nullable: false)
+                    NombtreFormatos = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     FechaCreacion = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     FechaModificacion = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Formatos", x => x.Id);
+                    table.PrimaryKey("PK_formatos", x => x.id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "HiloRespuetasNot",
+                name: "HiloRespuestaNotificacion",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nombretipo = table.Column<string>(type: "longtext", nullable: false)
+                    Nombretipo = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     FechaCreacion = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     FechaModificacion = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_HiloRespuetasNot", x => x.Id);
+                    table.PrimaryKey("PK_HiloRespuestaNotificacion", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "ModulosMaestros",
+                name: "modulosmaestros",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    NombreModulo = table.Column<string>(type: "longtext", nullable: true)
+                    NombreModulo = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     FechaCreacion = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     FechaModificacion = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ModulosMaestros", x => x.Id);
+                    table.PrimaryKey("PK_modulosmaestros", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "PermisosGenericos",
+                name: "permisosgenericos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    NombrePermiso = table.Column<string>(type: "longtext", nullable: true)
+                    nombrePermiso = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     FechaCreacion = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     FechaModificacion = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PermisosGenericos", x => x.Id);
+                    table.PrimaryKey("PK_permisosgenericos", x => x.id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Radicados",
+                name: "radicados",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -129,32 +129,32 @@ namespace Infraestructure.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Radicados", x => x.Id);
+                    table.PrimaryKey("PK_radicados", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Rol",
+                name: "rol",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nombre = table.Column<string>(type: "longtext", nullable: true)
+                    Nombre = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     FechaCreacion = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     FechaModificacion = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Rol", x => x.Id);
+                    table.PrimaryKey("PK_rol", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "SubModulos",
+                name: "submodulos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     NombreSubmodulo = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -163,7 +163,7 @@ namespace Infraestructure.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SubModulos", x => x.Id);
+                    table.PrimaryKey("PK_submodulos", x => x.id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -173,7 +173,7 @@ namespace Infraestructure.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    NombreTipo = table.Column<string>(type: "longtext", nullable: true)
+                    NombreTipo = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     FechaCreacion = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     FechaModificacion = table.Column<DateTime>(type: "datetime(6)", nullable: false)
@@ -185,115 +185,115 @@ namespace Infraestructure.Data.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "TipoRequerimientos",
+                name: "tiporequerimiento",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nombre = table.Column<string>(type: "longtext", nullable: true)
+                    Nombre = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     FechaCreacion = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     FechaModificacion = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TipoRequerimientos", x => x.Id);
+                    table.PrimaryKey("PK_tiporequerimiento", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "RolvsMaestros",
+                name: "rolvsmaestro",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    rolesId = table.Column<int>(type: "int", nullable: true),
                     IdRolFk = table.Column<int>(type: "int", nullable: false),
-                    MaestrosId = table.Column<int>(type: "int", nullable: true),
                     IdMaestroFk = table.Column<int>(type: "int", nullable: false),
                     FechaCreacion = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     FechaModificacion = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RolvsMaestros", x => x.Id);
+                    table.PrimaryKey("PK_rolvsmaestro", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_RolvsMaestros_ModulosMaestros_MaestrosId",
-                        column: x => x.MaestrosId,
-                        principalTable: "ModulosMaestros",
-                        principalColumn: "Id");
+                        name: "FK_rolvsmaestro_modulosmaestros_IdMaestroFk",
+                        column: x => x.IdMaestroFk,
+                        principalTable: "modulosmaestros",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_RolvsMaestros_Rol_rolesId",
-                        column: x => x.rolesId,
-                        principalTable: "Rol",
-                        principalColumn: "Id");
+                        name: "FK_rolvsmaestro_rol_IdRolFk",
+                        column: x => x.IdRolFk,
+                        principalTable: "rol",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "MaestrosvsSubmodulos",
+                name: "maestrosvssubmodulos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    MaestrosId = table.Column<int>(type: "int", nullable: true),
                     IdMaestro = table.Column<int>(type: "int", nullable: false),
-                    subModulosId = table.Column<int>(type: "int", nullable: true),
-                    IsSubModulo = table.Column<int>(type: "int", nullable: false),
+                    IdSubModulo = table.Column<int>(type: "int", nullable: false),
                     FechaCreacion = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     FechaModificacion = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MaestrosvsSubmodulos", x => x.Id);
+                    table.PrimaryKey("PK_maestrosvssubmodulos", x => x.id);
                     table.ForeignKey(
-                        name: "FK_MaestrosvsSubmodulos_ModulosMaestros_MaestrosId",
-                        column: x => x.MaestrosId,
-                        principalTable: "ModulosMaestros",
-                        principalColumn: "Id");
+                        name: "FK_maestrosvssubmodulos_modulosmaestros_IdMaestro",
+                        column: x => x.IdMaestro,
+                        principalTable: "modulosmaestros",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_MaestrosvsSubmodulos_SubModulos_subModulosId",
-                        column: x => x.subModulosId,
-                        principalTable: "SubModulos",
-                        principalColumn: "Id");
+                        name: "FK_maestrosvssubmodulos_submodulos_IdSubModulo",
+                        column: x => x.IdSubModulo,
+                        principalTable: "submodulos",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "BlockChains",
+                name: "BlockChain",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    HashGenerado = table.Column<string>(type: "longtext", nullable: false)
+                    HashGenerado = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    AuditoriasId = table.Column<int>(type: "int", nullable: true),
                     IdAuditoriaFk = table.Column<int>(type: "int", nullable: false),
-                    HiloRespuestaNotId = table.Column<int>(type: "int", nullable: true),
                     IdHiloRespuestaFk = table.Column<int>(type: "int", nullable: false),
-                    TipoNotsId = table.Column<int>(type: "int", nullable: true),
                     IdNotificacionFk = table.Column<int>(type: "int", nullable: false),
-                    FechaCreacion = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    FechaModificacion = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    FechaCreacion = table.Column<DateTime>(type: "DateTime", nullable: false),
+                    FechaModificacion = table.Column<DateTime>(type: "DateTime", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BlockChains", x => x.Id);
+                    table.PrimaryKey("PK_BlockChain", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_BlockChains_Auditorias_AuditoriasId",
-                        column: x => x.AuditoriasId,
+                        name: "FK_BlockChain_Auditorias_IdAuditoriaFk",
+                        column: x => x.IdAuditoriaFk,
                         principalTable: "Auditorias",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BlockChains_HiloRespuetasNot_HiloRespuestaNotId",
-                        column: x => x.HiloRespuestaNotId,
-                        principalTable: "HiloRespuetasNot",
-                        principalColumn: "Id");
+                        name: "FK_BlockChain_HiloRespuestaNotificacion_IdHiloRespuestaFk",
+                        column: x => x.IdHiloRespuestaFk,
+                        principalTable: "HiloRespuestaNotificacion",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BlockChains_TipoNotificaciones_TipoNotsId",
-                        column: x => x.TipoNotsId,
+                        name: "FK_BlockChain_TipoNotificaciones_IdNotificacionFk",
+                        column: x => x.IdNotificacionFk,
                         principalTable: "TipoNotificaciones",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -303,21 +303,15 @@ namespace Infraestructure.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    asuntoNotificacion = table.Column<string>(type: "longtext", nullable: true)
+                    asuntoNotificacion = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     TextoNotificacion = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    TipoNotificacioneId = table.Column<int>(type: "int", nullable: true),
                     IdNotificacionFk = table.Column<int>(type: "int", nullable: false),
-                    RadicadosId = table.Column<int>(type: "int", nullable: true),
                     IdRadicado = table.Column<int>(type: "int", nullable: false),
-                    EstadoNotId = table.Column<int>(type: "int", nullable: true),
                     IdEstadoNotificacionFk = table.Column<int>(type: "int", nullable: false),
-                    HiloRespuestaNotId = table.Column<int>(type: "int", nullable: true),
                     IdHiloRespuestaFk = table.Column<int>(type: "int", nullable: false),
-                    FormatosId = table.Column<int>(type: "int", nullable: true),
                     IdFormatoFk = table.Column<int>(type: "int", nullable: false),
-                    TpRequerimientoId = table.Column<int>(type: "int", nullable: true),
                     IdRequerimiento = table.Column<int>(type: "int", nullable: false),
                     FechaCreacion = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     FechaModificacion = table.Column<DateTime>(type: "datetime(6)", nullable: false)
@@ -326,205 +320,206 @@ namespace Infraestructure.Data.Migrations
                 {
                     table.PrimaryKey("PK_ModuloNotificaciones", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ModuloNotificaciones_EstadoNotificacions_EstadoNotId",
-                        column: x => x.EstadoNotId,
-                        principalTable: "EstadoNotificacions",
-                        principalColumn: "Id");
+                        name: "FK_ModuloNotificaciones_HiloRespuestaNotificacion_IdHiloRespues~",
+                        column: x => x.IdHiloRespuestaFk,
+                        principalTable: "HiloRespuestaNotificacion",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ModuloNotificaciones_Formatos_FormatosId",
-                        column: x => x.FormatosId,
-                        principalTable: "Formatos",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ModuloNotificaciones_HiloRespuetasNot_HiloRespuestaNotId",
-                        column: x => x.HiloRespuestaNotId,
-                        principalTable: "HiloRespuetasNot",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ModuloNotificaciones_Radicados_RadicadosId",
-                        column: x => x.RadicadosId,
-                        principalTable: "Radicados",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ModuloNotificaciones_TipoNotificaciones_TipoNotificacioneId",
-                        column: x => x.TipoNotificacioneId,
+                        name: "FK_ModuloNotificaciones_TipoNotificaciones_IdEstadoNotificacion~",
+                        column: x => x.IdEstadoNotificacionFk,
                         principalTable: "TipoNotificaciones",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ModuloNotificaciones_TipoRequerimientos_TpRequerimientoId",
-                        column: x => x.TpRequerimientoId,
-                        principalTable: "TipoRequerimientos",
-                        principalColumn: "Id");
+                        name: "FK_ModuloNotificaciones_estadonotificacion_IdEstadoNotificacion~",
+                        column: x => x.IdEstadoNotificacionFk,
+                        principalTable: "estadonotificacion",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ModuloNotificaciones_formatos_IdFormatoFk",
+                        column: x => x.IdFormatoFk,
+                        principalTable: "formatos",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ModuloNotificaciones_radicados_IdRadicado",
+                        column: x => x.IdRadicado,
+                        principalTable: "radicados",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ModuloNotificaciones_tiporequerimiento_IdRequerimiento",
+                        column: x => x.IdRequerimiento,
+                        principalTable: "tiporequerimiento",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "genericosvsSubmodulos",
+                name: "GenericosvsSubModulos",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    PermisosGenerId = table.Column<int>(type: "int", nullable: true),
                     IdPermisosFk = table.Column<int>(type: "int", nullable: false),
-                    RolesId = table.Column<int>(type: "int", nullable: true),
                     IdRolFk = table.Column<int>(type: "int", nullable: false),
-                    MaestrosvsSubmodulosId = table.Column<int>(type: "int", nullable: true),
                     IdSubModulos = table.Column<int>(type: "int", nullable: false),
-                    FechaCreacion = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    FechaModificacion = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    FechaCreacion = table.Column<DateTime>(type: "DateTime", nullable: false),
+                    FechaModificacion = table.Column<DateTime>(type: "DateTime", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_genericosvsSubmodulos", x => x.Id);
+                    table.PrimaryKey("PK_GenericosvsSubModulos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_genericosvsSubmodulos_MaestrosvsSubmodulos_MaestrosvsSubmodu~",
-                        column: x => x.MaestrosvsSubmodulosId,
-                        principalTable: "MaestrosvsSubmodulos",
-                        principalColumn: "Id");
+                        name: "FK_GenericosvsSubModulos_maestrosvssubmodulos_IdSubModulos",
+                        column: x => x.IdSubModulos,
+                        principalTable: "maestrosvssubmodulos",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_genericosvsSubmodulos_PermisosGenericos_PermisosGenerId",
-                        column: x => x.PermisosGenerId,
-                        principalTable: "PermisosGenericos",
-                        principalColumn: "Id");
+                        name: "FK_GenericosvsSubModulos_permisosgenericos_IdPermisosFk",
+                        column: x => x.IdPermisosFk,
+                        principalTable: "permisosgenericos",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_genericosvsSubmodulos_Rol_RolesId",
-                        column: x => x.RolesId,
-                        principalTable: "Rol",
-                        principalColumn: "Id");
+                        name: "FK_GenericosvsSubModulos_rol_IdRolFk",
+                        column: x => x.IdRolFk,
+                        principalTable: "rol",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BlockChains_AuditoriasId",
-                table: "BlockChains",
-                column: "AuditoriasId");
+                name: "IX_BlockChain_IdAuditoriaFk",
+                table: "BlockChain",
+                column: "IdAuditoriaFk");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BlockChains_HiloRespuestaNotId",
-                table: "BlockChains",
-                column: "HiloRespuestaNotId");
+                name: "IX_BlockChain_IdHiloRespuestaFk",
+                table: "BlockChain",
+                column: "IdHiloRespuestaFk");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BlockChains_TipoNotsId",
-                table: "BlockChains",
-                column: "TipoNotsId");
+                name: "IX_BlockChain_IdNotificacionFk",
+                table: "BlockChain",
+                column: "IdNotificacionFk");
 
             migrationBuilder.CreateIndex(
-                name: "IX_genericosvsSubmodulos_MaestrosvsSubmodulosId",
-                table: "genericosvsSubmodulos",
-                column: "MaestrosvsSubmodulosId");
+                name: "IX_GenericosvsSubModulos_IdPermisosFk",
+                table: "GenericosvsSubModulos",
+                column: "IdPermisosFk");
 
             migrationBuilder.CreateIndex(
-                name: "IX_genericosvsSubmodulos_PermisosGenerId",
-                table: "genericosvsSubmodulos",
-                column: "PermisosGenerId");
+                name: "IX_GenericosvsSubModulos_IdRolFk",
+                table: "GenericosvsSubModulos",
+                column: "IdRolFk");
 
             migrationBuilder.CreateIndex(
-                name: "IX_genericosvsSubmodulos_RolesId",
-                table: "genericosvsSubmodulos",
-                column: "RolesId");
+                name: "IX_GenericosvsSubModulos_IdSubModulos",
+                table: "GenericosvsSubModulos",
+                column: "IdSubModulos");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MaestrosvsSubmodulos_MaestrosId",
-                table: "MaestrosvsSubmodulos",
-                column: "MaestrosId");
+                name: "IX_maestrosvssubmodulos_IdMaestro",
+                table: "maestrosvssubmodulos",
+                column: "IdMaestro");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MaestrosvsSubmodulos_subModulosId",
-                table: "MaestrosvsSubmodulos",
-                column: "subModulosId");
+                name: "IX_maestrosvssubmodulos_IdSubModulo",
+                table: "maestrosvssubmodulos",
+                column: "IdSubModulo");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ModuloNotificaciones_EstadoNotId",
+                name: "IX_ModuloNotificaciones_IdEstadoNotificacionFk",
                 table: "ModuloNotificaciones",
-                column: "EstadoNotId");
+                column: "IdEstadoNotificacionFk");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ModuloNotificaciones_FormatosId",
+                name: "IX_ModuloNotificaciones_IdFormatoFk",
                 table: "ModuloNotificaciones",
-                column: "FormatosId");
+                column: "IdFormatoFk");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ModuloNotificaciones_HiloRespuestaNotId",
+                name: "IX_ModuloNotificaciones_IdHiloRespuestaFk",
                 table: "ModuloNotificaciones",
-                column: "HiloRespuestaNotId");
+                column: "IdHiloRespuestaFk");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ModuloNotificaciones_RadicadosId",
+                name: "IX_ModuloNotificaciones_IdRadicado",
                 table: "ModuloNotificaciones",
-                column: "RadicadosId");
+                column: "IdRadicado");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ModuloNotificaciones_TipoNotificacioneId",
+                name: "IX_ModuloNotificaciones_IdRequerimiento",
                 table: "ModuloNotificaciones",
-                column: "TipoNotificacioneId");
+                column: "IdRequerimiento");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ModuloNotificaciones_TpRequerimientoId",
-                table: "ModuloNotificaciones",
-                column: "TpRequerimientoId");
+                name: "IX_rolvsmaestro_IdMaestroFk",
+                table: "rolvsmaestro",
+                column: "IdMaestroFk");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RolvsMaestros_MaestrosId",
-                table: "RolvsMaestros",
-                column: "MaestrosId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_RolvsMaestros_rolesId",
-                table: "RolvsMaestros",
-                column: "rolesId");
+                name: "IX_rolvsmaestro_IdRolFk",
+                table: "rolvsmaestro",
+                column: "IdRolFk");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "BlockChains");
+                name: "BlockChain");
 
             migrationBuilder.DropTable(
-                name: "genericosvsSubmodulos");
+                name: "GenericosvsSubModulos");
 
             migrationBuilder.DropTable(
                 name: "ModuloNotificaciones");
 
             migrationBuilder.DropTable(
-                name: "RolvsMaestros");
+                name: "rolvsmaestro");
 
             migrationBuilder.DropTable(
                 name: "Auditorias");
 
             migrationBuilder.DropTable(
-                name: "MaestrosvsSubmodulos");
+                name: "maestrosvssubmodulos");
 
             migrationBuilder.DropTable(
-                name: "PermisosGenericos");
+                name: "permisosgenericos");
 
             migrationBuilder.DropTable(
-                name: "EstadoNotificacions");
-
-            migrationBuilder.DropTable(
-                name: "Formatos");
-
-            migrationBuilder.DropTable(
-                name: "HiloRespuetasNot");
-
-            migrationBuilder.DropTable(
-                name: "Radicados");
+                name: "HiloRespuestaNotificacion");
 
             migrationBuilder.DropTable(
                 name: "TipoNotificaciones");
 
             migrationBuilder.DropTable(
-                name: "TipoRequerimientos");
+                name: "estadonotificacion");
 
             migrationBuilder.DropTable(
-                name: "Rol");
+                name: "formatos");
 
             migrationBuilder.DropTable(
-                name: "ModulosMaestros");
+                name: "radicados");
 
             migrationBuilder.DropTable(
-                name: "SubModulos");
+                name: "tiporequerimiento");
+
+            migrationBuilder.DropTable(
+                name: "rol");
+
+            migrationBuilder.DropTable(
+                name: "modulosmaestros");
+
+            migrationBuilder.DropTable(
+                name: "submodulos");
         }
     }
 }

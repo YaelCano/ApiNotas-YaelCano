@@ -8,4 +8,6 @@ namespace Core.Entities;
     public class SubModulos : BaseEntity
     {
         public string NombreSubmodulo { get; set; }
+        public ICollection<MaestrosvsSubmodulos> MaestrosvsSubModulos {get; set;}
+
     }
