@@ -6,11 +6,11 @@ using AspNetCoreRateLimit;
 using Core.Interfaces;
 using Infraestructure.UnitOfWork;
 
-namespace API.Extension
+namespace ApiNotas.Extension
 {
     public static class ApplicationServiceExtensions
     {
-        public static void ConfigureCors(this IServiceCollection services)=>
+        public static void ConfigureCors(this IServiceCollection services) =>
         services.AddCors(options =>
         {
             options.AddPolicy("CorsPolicy", builder =>
@@ -40,7 +40,7 @@ namespace API.Extension
         }
         public static void AddAplicationServices(this IServiceCollection services)
         {
-            services.AddScoped<IUnitOfWork,UnitOfWork>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }
 }

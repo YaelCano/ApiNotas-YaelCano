@@ -1,20 +1,27 @@
 using System.Reflection;
+using ApiNotas.Extension;
+using AspNetCoreRateLimit;
 using Infraestructure.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
+builder.Services.ConfigureRateLimiting();
+builder.Services.AddAplicationServices();
+builder.Services.ConfigureCors();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddAutoMapper(Assembly.GetEntryAssembly()); builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddDbContext<ApiNotasContext>(options =>
 {
-    string connectionString = builder.Configuration.GetConnectionString("MySqlConex");
+    string connectionString = builder.Configuration.GetConnectionString("MysqlConex");
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 
@@ -28,6 +35,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("CorsPolicy");
+
+app.UseIpRateLimiting();
 
 app.UseAuthorization();
 

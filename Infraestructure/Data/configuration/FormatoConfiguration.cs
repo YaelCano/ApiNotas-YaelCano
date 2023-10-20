@@ -16,7 +16,7 @@ namespace Infraestructure.Data.configuration
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).HasColumnName("id");
-            builder.Property(x => x.NombtreFormatos).IsRequired().HasMaxLength(50);
+            builder.Property(x => x.NombreFormatos).IsRequired().HasMaxLength(50);
             builder.Property(x => x.FechaCreacion);
             builder.Property(x => x.FechaModificacion);
         }

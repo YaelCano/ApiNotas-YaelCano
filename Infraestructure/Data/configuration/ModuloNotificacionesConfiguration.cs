@@ -17,12 +17,12 @@ namespace Infraestructure.Data.configuration
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).HasColumnName("Id");
-            builder.Property(x => x.asuntoNotificacion).HasMaxLength(80).IsRequired();
+            builder.Property(x => x.AsuntoNotificacion).HasMaxLength(80).IsRequired();
             builder.Property(x => x.FechaCreacion);
             builder.Property(x => x.FechaModificacion);
 
 
-            builder.HasOne(M => M.Radicados)
+            builder.HasOne(M => M.Radicado)
             .WithMany(N => N.ModuloNoficaciones)
             .HasForeignKey(M => M.IdRadicado);
 

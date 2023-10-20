@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using API.Controllers;
 using ApiNotas.Controllers;
 using ApiNotas.Dtos;
 using AutoMapper;
@@ -10,7 +9,7 @@ using Core.Entities;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers
+namespace ApiNotas.Controllers
 {
     public class HiloRespuestaController : BaseController
     {

@@ -16,10 +16,11 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     {
         _context = context;
     }
+
     public IAuditoria _Auditorias;
     public IBlockChain _BlockChain;
-    public IEstadoNotificacion _EstadoNotificacion;
     public IFormato _Formatos;
+    public IEstadoNotificacion _EstadoNotificacion;
     public IGenericosvsSubModulos _GenericosvsSubModulos;
     public IHiloRespuestaNot _HilosRespuesta;
     public IMaestrovsSubModulos _MaestrosvsSubmodulos;
@@ -27,7 +28,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     public IModuloMaestros _ModulosMaestros;
     public IPermisosGenericos _PermisosGenericos;
     public IRadicados _Radicados;
-    public IRol _Roles;
+    public IRol _Rol;
     public IRolvsMaestro _RolesvsMaestros;
     public ISubModulo _Submodulos;
     public ITipoNotificaciones _TipoNotificaciones;
@@ -44,7 +45,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _Auditorias;
         }
     }
-    public IBlockChain Blockchain
+    public IBlockChain BlockChain
     {
         get
         {
@@ -64,12 +65,10 @@ public class UnitOfWork : IUnitOfWork, IDisposable
                 _EstadoNotificacion = new EstadoNotificacionRepository(_context);
             }
             return _EstadoNotificacion;
-            {
-
-            }
         }
     }
-    public IFormato Formato
+
+        public IFormato Formatos
     {
         get
         {
@@ -135,7 +134,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _ModulosNotificaciones;
         }
     }
-        public IPermisosGenericos permisosGenericos
+    public IPermisosGenericos PermisosGenericos
     {
         get
         {
@@ -146,7 +145,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _PermisosGenericos;
         }
     }
-        public IRadicados Radicados
+    public IRadicados Radicados
     {
         get
         {
@@ -157,18 +156,18 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _Radicados;
         }
     }
-        public IRol RolRepository
+    public IRol Rol 
     {
         get
         {
-            if (_Roles == null)
+            if (_Rol == null)
             {
-                _Roles = new RolRepository(_context);
+                _Rol = new RolRepository(_context);
             }
-            return _Roles;
+            return _Rol;
         }
     }
-        public IRolvsMaestro RolvsMaestroRepository
+    public IRolvsMaestro RolvsMaestro
     {
         get
         {
@@ -179,7 +178,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _RolesvsMaestros;
         }
     }
-        public ISubModulo SubModulo
+    public ISubModulo SubModulo
     {
         get
         {
@@ -190,7 +189,9 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _Submodulos;
         }
     }
-        public ITipoNotificaciones tipoNotificaciones
+
+
+    public ITipoNotificaciones TipoNotificaciones
     {
         get
         {
@@ -201,7 +202,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _TipoNotificaciones;
         }
     }
-        public ITipoRequerimiento TipoRequerimiento
+    public ITipoRequerimiento TipoRequerimiento
     {
         get
         {
@@ -213,19 +214,6 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         }
     }
 
-    public IBlockChain BlockChain => throw new NotImplementedException();
-
-    public IFormato Formatoormato => throw new NotImplementedException();
-
-    public IPermisosGenericos PermisosGenericos => throw new NotImplementedException();
-
-    public IRol Rol => throw new NotImplementedException();
-
-    public IRolvsMaestro RolvsMaestro => throw new NotImplementedException();
-
-    public ITipoNotificaciones TipoNotificaciones => throw new NotImplementedException();
-
-    public IFormato Formatos => throw new NotImplementedException();
 
     public Task<int> SaveAsync()
     {

@@ -7,7 +7,7 @@ namespace Core.Entities;
 
     public class RolvsMaestro : BaseEntity
     {
-        public Rol Roles { get; set; }
+        public Rol Rol { get; set; }
         public int IdRolFk { get; set; }
         public ModulosMaestros  Maestros { get; set; }
         public int IdMaestroFk { get; set; }

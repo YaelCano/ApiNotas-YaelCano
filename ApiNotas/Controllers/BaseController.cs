@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ApiNotas.Controllers
 {
     [ApiController]
-    [Route("controller")]
+    [Route("[controller]")]
     public class BaseController : ControllerBase
     {
 
